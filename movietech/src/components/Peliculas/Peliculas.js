@@ -25,9 +25,9 @@ class Peliculas extends Component {
   render() {
     return (
         <>
-<<<<<<< HEAD
             <h2>PELÍCULAS POPULARES</h2>
-            <section className="card-container">
+
+            <section>
                 {
                     this.state.data.length > 0 ?
                         this.state.data.map((key, idx) => 
@@ -42,27 +42,6 @@ class Peliculas extends Component {
                     <h1>Cargando..</h1>
                 }
             </section>
-=======
-        <div className="palabra">
-            <h3>PELÍCULAS POPULARES</h3>
-        </div>
-        <section className="card-container">
-            {
-                this.state.data.length > 0 ?
-                    this.state.data.map((key, idx) => 
-                    <PeliculasCard 
-                    key={key + idx} 
-                    name={key.title} 
-                    image={key.poster_path}
-                    descripcion={key.overview}
-                    id = {key.id}
-                    agregar = {(id) => this.agregarFavoritos(id)}
-                    
-                    />):
-                <h1>Cargando..</h1>
-            }
-      </section>
->>>>>>> 8a5d7e3be71a7ecfb4a7e5899e399e0bd105dfe7
         </>
     )
   }
