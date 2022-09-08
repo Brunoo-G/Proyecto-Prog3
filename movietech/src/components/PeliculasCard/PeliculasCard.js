@@ -15,7 +15,7 @@ class PeliculasCard extends Component {
 
   render(){
     return (
-      <article className="character-card">
+      <article className="pelicula-card">
           <img className="" src={`https://image.tmdb.org/t/p/w342/${this.props.image}`} alt="" /> 
           <div className="">
             <p > <Link to={`/detalle/${this.props.id}`}> {this.props.name}</Link></p>

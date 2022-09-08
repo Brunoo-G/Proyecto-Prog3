@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import { Link } from 'react-router-dom'
+import './style.css'
 
 
 class SeriesCard extends Component {
@@ -14,8 +15,7 @@ class SeriesCard extends Component {
   
   render(){
     return (
-      <a className="">
-          <article className="character-card">
+          <article className="series-card">
               <img src={`https://image.tmdb.org/t/p/w342/${this.props.image}`} alt=""></img>
               <div>
                   <p> <Link to={`/detalleSerie/${this.props.id}`}> {this.props.name}</Link> </p>
@@ -24,7 +24,6 @@ class SeriesCard extends Component {
                   <button onClick={() => this.props.agregarFavoritos(this.props.id)} > Agregar a Favoritos</button>
               </div>
           </article>
-      </a>
     )
   }
 }
