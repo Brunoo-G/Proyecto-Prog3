@@ -8,11 +8,9 @@ function Home(){
     return(
         <>
         <div>     
-            <h1>Estrenos de Peliculas</h1>
             <Peliculas/>
         </div>
         <div>
-            <h1>Estrenos de Series</h1> 
             <Series/>
         </div>
         </>

@@ -8,8 +8,8 @@ function Header(){
         <header>
             <Link to = "/" > Home </Link>
             <Link to = "/favoritos" > Favoritos </Link>
-            <Link to = "/populares" > Populares </Link>
-            <Link to = "/estrenos" > Estrenos </Link>
+            <Link to = "/series" > Series </Link>
+            <Link to = "/peliculas" > Peliculas </Link>
 
             <img className="logo" src="/img/logo.png" />
         </header>
