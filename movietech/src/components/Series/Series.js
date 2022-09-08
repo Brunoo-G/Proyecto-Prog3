@@ -26,6 +26,7 @@ class Series extends Component {
     return (
         <>
             <h2>SERIES POPULARES</h2>
+            
             <section className="card-container">
                 {
                     this.state.data.length > 0 ?

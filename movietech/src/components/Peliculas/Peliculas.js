@@ -1,6 +1,6 @@
 import React,{Component} from 'react'
 import PeliculasCard from '../PeliculasCard/PeliculasCard';
-
+import './style.css'
 
 class Peliculas extends Component {
     constructor(props){
@@ -27,7 +27,7 @@ class Peliculas extends Component {
         <>
             <h2>PELÍCULAS POPULARES</h2>
 
-            <section>
+            <section className="card-container">
                 {
                     this.state.data.length > 0 ?
                         this.state.data.map((key, idx) => 

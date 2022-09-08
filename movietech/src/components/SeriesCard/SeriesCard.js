@@ -14,19 +14,17 @@ class SeriesCard extends Component {
   
   render(){
     return (
-    <section className="">
-        <a className="">
-            <article className="">
-                <img className="" src={`https://image.tmdb.org/t/p/w342/${this.props.image}`} alt=""></img>
-                <div className="">
-                    <p className=""> <Link to={`/detalleSerie/${this.props.id}`}> {this.props.name}</Link> </p>
-                    <p className={this.state.verMas}>{this.props.descripcion}</p> {/* este deberia solo aparecer si tocamos el Ver mas */}
-                    <button onClick={() => this.verMas()}>Ver más</button>
-                    <button onClick={() => this.props.agregarFavoritos(this.props.id)} > Agregar a Favoritos</button>
-                </div>
-            </article>
-        </a>
-    </section>
+      <a className="">
+          <article className="character-card">
+              <img src={`https://image.tmdb.org/t/p/w342/${this.props.image}`} alt=""></img>
+              <div>
+                  <p> <Link to={`/detalleSerie/${this.props.id}`}> {this.props.name}</Link> </p>
+                  <p className={this.state.verMas}>{this.props.descripcion}</p> {/* este deberia solo aparecer si tocamos el Ver mas */}
+                  <button onClick={() => this.verMas()}>Ver más</button>
+                  <button onClick={() => this.props.agregarFavoritos(this.props.id)} > Agregar a Favoritos</button>
+              </div>
+          </article>
+      </a>
     )
   }
 }
