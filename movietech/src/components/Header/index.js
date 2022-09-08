@@ -10,6 +10,8 @@ function Header(){
             <Link to = "/favoritos" > Favoritos </Link>
             <Link to = "/populares" > Populares </Link>
             <Link to = "/estrenos" > Estrenos </Link>
+
+            <img className="logo" src="/img/logo.png" />
         </header>
     )
 }

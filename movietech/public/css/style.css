@@ -1,0 +1,19 @@
+/* Resets */
+*{
+    box-sizing: border-box;
+}
+ul,ol {
+    padding: 0;
+}
+li {
+    list-style-type:none;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+body {
+    font-family: Nunito;
+    margin: 0;
+    background-color: #eee;
+}

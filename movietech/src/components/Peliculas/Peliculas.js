@@ -25,25 +25,22 @@ class Peliculas extends Component {
   render() {
     return (
         <>
-        <div className="palabra">
-    <h3>PELÍCULAS POPULARES</h3>
-</div>
-        <section className="card-container">
-            {
-                this.state.data.length > 0 ?
-                    this.state.data.map((key, idx) => 
-                    <PeliculasCard 
-                    key={key + idx} 
-                    name={key.title} 
-                    image={key.poster_path}
-                    descripcion={key.overview}
-                    id = {key.id}
-                    agregar = {(id) => this.agregarFavoritos(id)}
-                    
-                    />):
-                <h1>Cargando..</h1>
-            }
-      </section>
+            <h2>PELÍCULAS POPULARES</h2>
+            <section className="card-container">
+                {
+                    this.state.data.length > 0 ?
+                        this.state.data.map((key, idx) => 
+                        <PeliculasCard 
+                        key={key + idx} 
+                        name={key.title} 
+                        image={key.poster_path}
+                        descripcion={key.overview}
+                        id = {key.id}
+                        agregar = {(id) => this.agregarFavoritos(id)}
+                        />):
+                    <h1>Cargando..</h1>
+                }
+            </section>
         </>
     )
   }

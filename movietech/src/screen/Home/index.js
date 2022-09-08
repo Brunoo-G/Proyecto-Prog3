@@ -5,7 +5,6 @@ function Home(){
 
     return(
         <div>
-            <h1>Estrenos</h1>
             <Peliculas/>
         </div>
     )

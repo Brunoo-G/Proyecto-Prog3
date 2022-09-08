@@ -8,7 +8,6 @@ import Populares from "./screen/Populares/index"
 import Estrenos from "./screen/Estrenos/index"
 import { Route, Switch } from "react-router-dom"
 
-
 function App() {
   return (
     <div>
