@@ -1,0 +1,16 @@
+.bienvenida{
+    background-image: url(../../../public/img/banner.png);
+    padding: 7.5%;
+}
+
+.bienvenida h1{
+    font-size: 70px;
+    color: rgb(255, 255, 255);
+    margin-bottom: 0%;
+    margin-top: 0%;
+}
+
+.bienvenida h2{
+    color: rgb(255, 255, 255);
+    margin-top: 0%;
+}

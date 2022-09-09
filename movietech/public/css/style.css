@@ -15,5 +15,6 @@ a {
 body {
     font-family: Nunito;
     margin: 0;
-    background-color: #eee;
+    background-color: rgb(0, 0, 0);
+    color: white;
 }

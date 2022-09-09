@@ -2,12 +2,13 @@
     margin:0 1rem 2rem;
     padding:1rem;
     border-radius: 10px;
-    box-shadow: 0 10px 10px rgba(109, 109, 109, 0.3);
+    box-shadow: 3px 3px 88px 5px rgba(255, 255, 255, 0.4);
     max-width:20rem;
     display:flex;
     flex-direction: column;
     align-items: center;
     width: 20%;
+    background-color: rgba(0, 0, 0, 0.537);
 }
 .pelicula-card img{
     max-width: 15rem;

@@ -6,7 +6,7 @@ function Header(){
 
     return(
         <header>
-            <img className="logo" src="/img/logo.png" />
+            <img className="logo" src="/img/logo.png" /> 
             
             <Link to = "/" > Home </Link>
             <Link to = "/favoritos" > Favoritos </Link>
