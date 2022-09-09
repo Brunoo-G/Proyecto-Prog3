@@ -25,14 +25,9 @@ class Peliculas extends Component {
 
   render() {
     return (
-<<<<<<< HEAD
     <>
         <div className='peliculas'>
             <h1>PELÍCULAS POPULARES</h1>
-=======
-        <>
-            <h2>PELÍCULAS POPULARES</h2>  <Link to = "/peliculas" > Ver más </Link>
->>>>>>> c5dd3db02c7efb3cada18dfd3a18f1da093246fe
 
             <section className="card-container">
                 {

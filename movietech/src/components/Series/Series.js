@@ -1,11 +1,6 @@
 import React,{Component} from 'react'
 import SeriesCard from '../SeriesCard/SeriesCard';
-<<<<<<< HEAD
 import './style.css'
-=======
-import { Link } from "react-router-dom"
-
->>>>>>> c5dd3db02c7efb3cada18dfd3a18f1da093246fe
 
 class Series extends Component {
     constructor(props){
@@ -29,14 +24,9 @@ class Series extends Component {
 
   render() {
     return (
-<<<<<<< HEAD
     <>
         <div className='series'>
             <h1>SERIES POPULARES</h1>
-=======
-        <>
-            <h2>SERIES POPULARES</h2>  <Link to = "/series" > Ver más </Link>
->>>>>>> c5dd3db02c7efb3cada18dfd3a18f1da093246fe
             
             <section className="card-container">
                 {
