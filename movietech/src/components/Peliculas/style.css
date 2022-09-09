@@ -3,3 +3,13 @@
  flex-wrap: wrap;
  justify-content: center;
 }
+
+.peliculas{
+    margin-top: 2%;
+    margin-bottom: 5%;
+}
+
+.peliculas h1{
+    text-align: center;
+    margin-bottom: 3.5%;
+}

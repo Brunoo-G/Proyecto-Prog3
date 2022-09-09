@@ -2,12 +2,11 @@
     margin:0 1rem 2rem;
     padding:1rem;
     border-radius: 10px;
-    box-shadow: 3px 3px 88px 5px rgba(255, 255, 255, 0.4);
-    max-width:20rem;
+    box-shadow: 3px 3px 50px 5px rgba(61, 61, 61, 0.873);
     display:flex;
     flex-direction: column;
     align-items: center;
-    width: 80%;
+    width: 21%;
     background-color: rgba(0, 0, 0, 0.537);
 }
 .series-card img{

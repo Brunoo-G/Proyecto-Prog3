@@ -1,0 +1,14 @@
+.card-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.series{
+    margin-top: 3%;
+}
+
+.series h1{
+    text-align: center;
+    margin-bottom: 4.5%;
+}

@@ -16,8 +16,8 @@ class PeliculasCard extends Component {
   render(){
     return (
       <article className="pelicula-card">
-          <img className="" src={`https://image.tmdb.org/t/p/w342/${this.props.image}`} alt="" /> 
-          <div className="">
+          <img src={`https://image.tmdb.org/t/p/w342/${this.props.image}`} alt="" /> 
+          <div>
             <p > <Link to={`/detalle/${this.props.id}`}> {this.props.name}</Link></p>
             <p className={this.state.verMas}>{this.props.descripcion}</p> 
             {

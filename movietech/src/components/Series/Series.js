@@ -1,6 +1,6 @@
 import React,{Component} from 'react'
 import SeriesCard from '../SeriesCard/SeriesCard';
-
+import './style.css'
 
 class Series extends Component {
     constructor(props){
@@ -24,8 +24,9 @@ class Series extends Component {
 
   render() {
     return (
-        <>
-            <h2>SERIES POPULARES</h2>
+    <>
+        <div className='series'>
+            <h1>SERIES POPULARES</h1>
             
             <section className="card-container">
                 {
@@ -41,7 +42,8 @@ class Series extends Component {
                     <h1>Cargando..</h1>
                 }
             </section>
-        </>
+        </div>
+    </>
     )
   }
 }

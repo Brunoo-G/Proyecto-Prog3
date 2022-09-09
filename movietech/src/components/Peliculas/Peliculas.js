@@ -24,8 +24,9 @@ class Peliculas extends Component {
 
   render() {
     return (
-        <>
-            <h2>PELÍCULAS POPULARES</h2>
+    <>
+        <div className='peliculas'>
+            <h1>PELÍCULAS POPULARES</h1>
 
             <section className="card-container">
                 {
@@ -42,7 +43,8 @@ class Peliculas extends Component {
                     <h1>Cargando..</h1>
                 }
             </section>
-        </>
+        </div>
+    </>
     )
   }
 }
