@@ -1,10 +1,11 @@
 import React from "react";
+import TodasSeries from "../../components/TodasSeries/TodasSeries";
 
 function Populares(){
 
     return(
         <div>
-            <h1>Series</h1>
+            <TodasSeries/>
         </div>
     )
 }

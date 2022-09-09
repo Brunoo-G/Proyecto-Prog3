@@ -1,10 +1,11 @@
 import React from "react";
+import TodasPelis from "../../components/TodasPelis/TodasPelis";
 
 function Estrenos(){
 
     return(
         <div>
-            <h1>Peliculas</h1>
+            <TodasPelis/>
         </div>
     )
 }

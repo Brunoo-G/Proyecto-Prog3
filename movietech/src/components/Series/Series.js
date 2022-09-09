@@ -16,7 +16,7 @@ class Series extends Component {
         fetch('https://api.themoviedb.org/3/tv/popular?api_key=7a176cc95147be6e695be2faf0e8ff9c')
         .then(resp => resp.json())
         .then(data => this.setState({
-            data: data.results.slice(0,12)
+            data: data.results.slice(0,3)
         }))
         .catch(err => console.log(err)) 
     }
