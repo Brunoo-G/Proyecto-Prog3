@@ -2,8 +2,7 @@ header{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 0 0 0 0;
+    padding: 10px 10px 10px 10px;
     background-color: #000000;
 }
 
@@ -11,11 +10,13 @@ header a{
     text-decoration: none;
     font-size: 25px;
     color: white;
-    margin-top: 2.8%;
+    margin-top: 1.2%;
+    margin-left: 3%;
 }
 
-
-
+.logo{
+    width: 15%;
+}
 
 
 
