@@ -1,5 +1,6 @@
 import React,{Component} from 'react'
 import PeliculasCard from '../PeliculasCard/PeliculasCard';
+import { Link } from "react-router-dom"
 import './style.css'
 
 class Peliculas extends Component {
@@ -25,7 +26,7 @@ class Peliculas extends Component {
   render() {
     return (
         <>
-            <h2>PELÍCULAS POPULARES</h2>
+            <h2>PELÍCULAS POPULARES</h2>  <Link to = "/peliculas" > Ver más </Link>
 
             <section className="card-container">
                 {
