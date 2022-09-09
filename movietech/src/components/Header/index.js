@@ -12,6 +12,7 @@ function Header(){
             <Link to = "/favoritos" > Favoritos </Link>
             <Link to = "/series" > Series </Link>
             <Link to = "/peliculas" > Peliculas </Link>
+            <img className="logo" src="/img/logo.png" />
         </header>
     )
 }
