@@ -5,7 +5,7 @@ class Buscador extends Component{
     constructor(props){
         super(props)
         this.state={
-            valos:''
+            valor:''
         }
     }
 
@@ -17,7 +17,7 @@ class Buscador extends Component{
         this.setState({
             valor: event.target.value
         },
-        () => console.log(this.state.valor)
+        () => this.props.filtrar(this.state.valor)
         )
     }
 
@@ -25,7 +25,7 @@ class Buscador extends Component{
         return( 
             <form onSubmit={(event) => this.evitarSubmit(event)}>
                 <input type='text'placeholder="¿Qué te gustaria ver hoy?"  onChange={(event) => this.controlarCambios(event)} value={this.state.valor} />
-                <button>Buscar </button>
+                <button>Buscar</button>
             </form>
         )
     }

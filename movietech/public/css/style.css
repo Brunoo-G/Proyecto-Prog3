@@ -10,7 +10,7 @@ li {
 }
 a {
     text-decoration: none;
-    color: #000;
+    color: rgb(255, 255, 255);
 }
 body {
     font-family: Nunito;
