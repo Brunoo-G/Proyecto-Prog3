@@ -23,7 +23,7 @@ class Buscador extends Component{
 
     render(){
         return( 
-            <form onSubmit={(event) => this.evitarSubmit(event)}>
+            <form className='buscador' onSubmit={(event) => this.evitarSubmit(event)}>
                 <input type='text'placeholder="¿Qué te gustaria ver hoy?"  onChange={(event) => this.controlarCambios(event)} value={this.state.valor} />
                 <button>Buscar</button>
             </form>

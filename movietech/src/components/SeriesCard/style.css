@@ -12,3 +12,20 @@
 .series-card img{
     max-width: 15rem;
 }
+
+.series-card button{
+    border-radius: 3px;border: solid 2px rgba(66, 66, 66, 0.558);
+    font-size: 1.1em;
+    background-color: rgba(7, 7, 7, 0.575);
+    color: white;
+    border-radius: 20px;
+}
+
+.contenido{
+    display: flex;
+    flex-direction: column;
+}
+
+.botones{
+    display: flex;
+}

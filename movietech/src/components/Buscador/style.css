@@ -17,7 +17,7 @@ input{
     color: white;
 }
 
-button{
+.buscador button{
     width: 12%;
     border-radius: 3px;border: solid 2px rgba(66, 66, 66, 0.558);
     font-size: 1.1em;
