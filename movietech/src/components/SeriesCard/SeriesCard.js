@@ -82,7 +82,7 @@ class SeriesCard extends Component {
               <p className={this.state.verMas}>{this.props.descripcion}</p> {/* este deberia solo aparecer si tocamos el Ver mas */}
               
               <div className='botones'>
-                <button onClick={() => this.verMas()}>Ver más</button>
+                <button onClick={() => this.verMas()}>Ver más/Ver menos</button>
                 {
                   this.state.favorito?
                    <button onClick={()=> this.sacarFavoritos(this.props.id) }> Eliminar de favoritos</button>

@@ -81,7 +81,7 @@ class PeliculasCard extends Component {
             <p className={this.state.verMas}>{this.props.descripcion}</p>
 
             <div className='botones'>
-              <button onClick={() => this.verMas()}>Ver más</button>
+              <button onClick={() => this.verMas()}>Ver más/Ver menos</button>
               {
                   this.state.favorito?
                    <button onClick={()=> this.sacarFavoritos(this.props.id) }> Eliminar de favoritos</button>
