@@ -13,6 +13,18 @@ class PeliculasCard extends Component {
     }
   }
 
+  verMas(){
+    if(this.state.verMas === 'show'){
+        this.setState({
+            verMas: 'hide'
+        })
+    } else {
+        this.setState({
+            verMas: 'show'
+      })
+    }
+ }
+
   render(){
     return (
       <article className="pelicula-card">

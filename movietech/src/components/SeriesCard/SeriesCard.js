@@ -12,6 +12,18 @@ class SeriesCard extends Component {
       value:""
     }
   }
+
+  verMas(){
+    if(this.state.verMas === 'show'){
+        this.setState({
+            verMas: 'hide'
+        })
+    } else {
+        this.setState({
+            verMas: 'show'
+      })
+    }
+ }
   
   render(){
     return (
