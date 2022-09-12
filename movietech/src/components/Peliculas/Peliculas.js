@@ -1,6 +1,5 @@
 import React,{Component} from 'react'
 import PeliculasCard from '../PeliculasCard/PeliculasCard';
-import Buscador from '../Buscador/index';
 import './style.css'
 
 class Peliculas extends Component {
@@ -22,21 +21,10 @@ class Peliculas extends Component {
         .catch(err => console.log(err))  
     }
 
-    buscarPeliculas(titulo){
-        fetch(`https://api.themoviedb.org/3/search/movie?api_key=9ea8026abecb25639235199cb1388857&query=${titulo}`)
-        .then(resp => resp.json())
-        .then(data => this.setState({
-            data: data.results
-        }))
-        .catch(error => console.log(error))
-    }
-
-
   render() {
     return (
     <>
         <div className='peliculas'>
-            <Buscador filtrar={(titulo) => this.buscarPeliculas(titulo)} />
 
             <h1>PELÍCULAS POPULARES</h1>
 

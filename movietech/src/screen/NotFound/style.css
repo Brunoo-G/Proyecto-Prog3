@@ -1,6 +1,6 @@
 .error{
-    margin: 5%;
-    position: relative;
-    left: 19%;
+    margin-top: 3%;
+    display: flex;
+    justify-content: center;
 }
 

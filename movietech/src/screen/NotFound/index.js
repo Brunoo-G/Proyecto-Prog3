@@ -1,6 +1,5 @@
 import './style.css'
 
-
 function NotFound() {
     return(
         <div className="error">
