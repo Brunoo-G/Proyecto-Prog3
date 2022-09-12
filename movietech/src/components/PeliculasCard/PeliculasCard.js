@@ -24,6 +24,51 @@ class PeliculasCard extends Component {
       })
     }
  }
+  componentDidMount(){
+    let Storage = localStorage.getItem('peliculasFavoritas')
+    let storageParseado = JSON.parse(Storage)
+    if(storageParseado !== null){
+      let esFavorita = storageParseado.includes(this.props.id) 
+      if(esFavorita) {
+        this.setState({
+          favorito:true
+        })
+      }
+    }
+  }
+
+  agregarFavoritos(id){
+    let Storage = localStorage.getItem('peliculasFavoritas')
+
+    if(Storage === null){
+      let array = [id]
+      let arrayAString = JSON.stringify(array)
+      localStorage.setItem('peliculasFavoritas', arrayAString)
+    } else {
+      let arrayParseado = JSON.parse(Storage)
+      arrayParseado.push(id)
+      let arrayAString = JSON.stringify(arrayParseado)
+      localStorage.setItem('peliculasFavoritas', arrayAString)
+    }
+
+    this.setState({
+      favorito:true
+    })
+  }
+
+  sacarFavoritos(id){
+    let Storage = localStorage.getItem('peliculasFavoritas')
+    let storageParseado = JSON.parse(Storage) 
+    let filtroStorage = storageParseado.filter(elemento => elemento !== id)
+
+    let storageAString = JSON.stringify(filtroStorage)
+
+    localStorage.setItem('peliculasFavoritas', storageAString)
+
+    this.setState({
+      favorito: false
+    })
+  }
 
   render(){
     return (
@@ -36,8 +81,13 @@ class PeliculasCard extends Component {
             <p className={this.state.verMas}>{this.props.descripcion}</p>
 
             <div className='botones'>
-              {this.state.favoritos ? <button onClick={() => this.removeFavoritos(this.props.id)}> Sacar de Favoritos</button>: <button onClick={() => this.agregarFavoritos(this.props.id)} > Agregar a Favoritos</button> }
               <button onClick={() => this.verMas()}>Ver más</button>
+              {
+                  this.state.favorito?
+                   <button onClick={()=> this.sacarFavoritos(this.props.id) }> Eliminar de favoritos</button>
+                   :
+                   <button onClick={() => this.agregarFavoritos(this.props.id)} > Agregar a Favoritos</button>
+                }
             </div>
 
           </div>

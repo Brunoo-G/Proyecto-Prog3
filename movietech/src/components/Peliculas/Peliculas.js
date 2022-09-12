@@ -1,6 +1,7 @@
 import React,{Component} from 'react'
 import PeliculasCard from '../PeliculasCard/PeliculasCard';
 import Buscador from '../Buscador/index';
+import { Link } from "react-router-dom"
 import './style.css'
 
 class Peliculas extends Component {
@@ -38,7 +39,8 @@ class Peliculas extends Component {
         <div className='peliculas'>
             <Buscador filtrar={(titulo) => this.buscarPeliculas(titulo)} />
 
-            <h1>PELÍCULAS POPULARES</h1>
+            <h1>PELÍCULAS POPULARES</h1> 
+            <Link to = "/peliculas" ><h3>Ver más</h3>  </Link>
 
             <section className="card-container">
                 {

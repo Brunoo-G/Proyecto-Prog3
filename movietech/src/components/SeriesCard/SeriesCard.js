@@ -9,6 +9,7 @@ class SeriesCard extends Component {
     super(props)
     this.state ={
       verMas: 'hide',
+      favorito: false ,
       value:""
     }
   }
@@ -24,6 +25,51 @@ class SeriesCard extends Component {
       })
     }
  }
+  componentDidMount(){
+    let Storage = localStorage.getItem('seriesFavoritas')
+    let storageParseado = JSON.parse(Storage)
+    if(storageParseado !== null){
+      let esFavorita = storageParseado.includes(this.props.id) 
+      if(esFavorita) {
+        this.setState({
+          favorito:true
+        })
+      }
+    }
+  }
+
+  agregarFavoritos(id){
+    let Storage = localStorage.getItem('seriesFavoritas')
+
+    if(Storage === null){
+      let array = [id]
+      let arrayAString = JSON.stringify(array)
+      localStorage.setItem('seriesFavoritas', arrayAString)
+    } else {
+      let arrayParseado = JSON.parse(Storage)
+      arrayParseado.push(id)
+      let arrayAString = JSON.stringify(arrayParseado)
+      localStorage.setItem('seriesFavoritas', arrayAString)
+    }
+
+    this.setState({
+      favorito:true
+    })
+  }
+
+  sacarFavoritos(id){
+    let Storage = localStorage.getItem('seriesFavoritas')
+    let storageParseado = JSON.parse(Storage) 
+    let filtroStorage = storageParseado.filter(elemento => elemento !== id)
+
+    let storageAString = JSON.stringify(filtroStorage)
+
+    localStorage.setItem('seriesFavoritas', storageAString)
+
+    this.setState({
+      favorito: false
+    })
+  }
   
   render(){
     return (
@@ -37,7 +83,12 @@ class SeriesCard extends Component {
               
               <div className='botones'>
                 <button onClick={() => this.verMas()}>Ver más</button>
-                <button onClick={() => this.props.agregarFavoritos(this.props.id)} > Agregar a Favoritos</button>
+                {
+                  this.state.favorito?
+                   <button onClick={()=> this.sacarFavoritos(this.props.id) }> Eliminar de favoritos</button>
+                   :
+                   <button onClick={() => this.agregarFavoritos(this.props.id)} > Agregar a Favoritos</button>
+                }
               </div>
           </div>
      
