@@ -1,21 +1,19 @@
-.pelicula-card{
+.series-card{
     margin:0 1rem 2rem;
     padding:1rem;
     border-radius: 10px;
     box-shadow: 3px 3px 50px 5px rgba(83, 83, 83, 0.873);
-    max-width:20rem;
     display:flex;
     flex-direction: column;
     align-items: center;
-    width: 20%;
+    width: 21%;
     background-color: rgba(0, 0, 0, 0.537);
 }
-
-.pelicula-card img{
+.series-card img{
     max-width: 15rem;
 }
 
-.pelicula-card button{
+.series-card button{
     border-radius: 3px;border: solid 2px rgba(66, 66, 66, 0.558);
     font-size: 1.1em;
     background-color: rgba(7, 7, 7, 0.575);
@@ -30,11 +28,4 @@
 
 .botones{
     display: flex;
-}
-
-.show{
-    display: block;
-}
-.hide{
-    display: none;
 }

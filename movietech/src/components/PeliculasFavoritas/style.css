@@ -1,0 +1,19 @@
+.card-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+   }
+   
+   .peliculas{
+       margin-top: 2%;
+       margin-bottom: 2%;
+   }
+   
+   .peliculas h1{
+       text-align: center;
+       margin-bottom: 2.5%;
+   }
+   .peliculas h3{
+       text-align: center;
+       margin-bottom: 2.5%;
+   }

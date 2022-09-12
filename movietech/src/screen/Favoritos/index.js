@@ -1,12 +1,27 @@
-import React from "react";
+import React, {Component} from 'react'
+import PeliculasFavoritas from "../../components/PeliculasFavoritas/PeliculasFavoritas.js";
+import SeriesFavoritas from "../../components/SeriesFavoritas/SeriesFavoritas.js";
+import './style.css'
 
 function Favoritos(){
 
     return(
-        <div>
-            <h1>Favoritos</h1>
+        <>
+        <div className="titulo">
+            <h1>PELÍCULAS FAVORITAS</h1>
         </div>
+        <div>     
+            <PeliculasFavoritas/>
+        </div>
+        <div className="titulo">
+            <h1>SERIES FAVORITAS</h1>
+        </div>
+        <div>     
+            <SeriesFavoritas/>
+        </div>
+        </>
     )
+    
 }
 
 export default Favoritos;

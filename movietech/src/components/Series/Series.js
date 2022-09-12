@@ -1,5 +1,6 @@
 import React,{Component} from 'react'
 import SeriesCard from '../SeriesCard/SeriesCard';
+import { Link } from "react-router-dom"
 import './style.css'
 
 class Series extends Component {
@@ -16,7 +17,7 @@ class Series extends Component {
         fetch('https://api.themoviedb.org/3/tv/popular?api_key=7a176cc95147be6e695be2faf0e8ff9c')
         .then(resp => resp.json())
         .then(data => this.setState({
-            data: data.results.slice(0,3)
+            data: data.results.slice(0,8)
         }))
         .catch(err => console.log(err)) 
     }
@@ -26,7 +27,8 @@ class Series extends Component {
     return (
     <>
         <div className='series'>
-            <h1>SERIES POPULARES</h1>
+            <h1>SERIES POPULARES</h1>  
+            <Link to = "/series" > <h3>Ver más</h3> </Link>
             
             <section className="card-container">
                 {
