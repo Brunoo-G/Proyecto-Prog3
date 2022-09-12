@@ -1,36 +1,26 @@
 import React, {Component} from 'react'
+import PeliculasFavoritas from "../../components/PeliculasFavoritas/PeliculasFavoritas.js";
+import SeriesFavoritas from "../../components/SeriesFavoritas/SeriesFavoritas.js";
 
-class Favoritos extends Component{
-    constructor(props){
-        super(props)
-        this.state={
-            personaje:[]
-        }
-    }
-    componentDidMount(){
-        let Storage = localStorage.getItem('peliculasFavoritas')
-        if(Storage!== null){
-            let storageParseado = JSON.parse(Storage)
-            
-            Promise.all(
-                storageParseado.map(element =>{
-                    return(
-                        fetch(`https://api.themoviedb.org/3/movie/${element}?api_key=7a176cc95147be6e695be2faf0e8ff9c`)
-                        .then(resp => resp.json())
-                        .then(data => data))
-                })
-            )
-            .then(data => console.log(data))
-        }
-    }
+function Favoritos(){
 
-    render(){
-        return(
-            <h1>
-                Favoritos
-            </h1>
-        )
-    }
+    return(
+        <>
+        <div>
+            <h1>Películas favoritas:</h1>
+        </div>
+        <div>     
+            <PeliculasFavoritas/>
+        </div>
+        <div>
+            <h1>Series favoritas:</h1>
+        </div>
+        <div>     
+            <SeriesFavoritas/>
+        </div>
+        </>
+    )
+    
 }
 
 export default Favoritos;
