@@ -5,7 +5,7 @@ class Detalle extends Component{
     constructor(props){
         super(props);
         this.state = {
-            detalle: {},
+            detalle: false,
 
             
         }
@@ -23,25 +23,29 @@ class Detalle extends Component{
     
     }
 
-
     render(){
+        console.log('Este es el state')
+        console.log(this.state.detalle)
         return(
         <>
-        
-        <main> 
-           <div class="portada">
-                <img class="imgLaptop" src={`https://image.tmdb.org/t/p/w342/${this.state.detalle.poster_path}`} alt=""></img>
+        {this.state.detalle ?
+        <main className="detalle"> 
+           <div>
+                <img src={`https://image.tmdb.org/t/p/w342/${this.state.detalle.poster_path}`} alt=""></img>
             </div>
-            <div class="info">
+            <div>
                 <h1>{this.state.detalle.title}</h1>                    
-                <ul class="detalles">
-                    <li class="fechaDeEstreno">{this.state.detalle.release_date}</li>
+                <ul>
+                    <li> Fecha De Estreno {this.state.detalle.release_date}</li>
                 </ul>
-                <p class="rating">{this.state.detalle.vote_average}</p>
-                <p class="sinopsis">{this.state.detalle.overview}</p>
+                <p> Rating {this.state.detalle.vote_average}</p>
+                <p> {this.state.detalle.overview}</p>
+                <p> Duracion  {this.state.detalle.runtime} minutos</p>
+                <p> Genero {this.state.detalle.genres[1].name}</p>
                 
             </div>
-        </main>
+        </main>: <></> }
+        
         </>
         
         )
