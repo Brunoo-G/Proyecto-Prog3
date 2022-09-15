@@ -25,7 +25,9 @@ class TodasSeries extends Component {
   render() {
     return (
         <>
-            <h2>Todas las Series</h2>
+            <div className='peliculas'>
+                <h1>TODAS LAS SERIES</h1>
+            </div>
             
             <section className="card-container">
                 {
