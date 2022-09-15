@@ -33,13 +33,18 @@ class Series extends Component {
                 {
                     this.state.data.length > 0 ?
                         this.state.data.map((key, idx) => 
-                        <SeriesCard 
-                        key={key + idx} 
-                        name={key.name} 
-                        image={key.poster_path}
-                        descripcion={key.overview}
-                        id = {key.id}
-                        />):
+                        {
+                        console.log(key)   
+                        return(
+                            <SeriesCard 
+                            key={key + idx} 
+                            name={key.name} 
+                            image={key.poster_path}
+                            descripcion={key.overview}
+                            id = {key.id}
+                            />
+                        )}
+                        ):
                     <h1>Cargando..</h1>
                 }
             </section>
