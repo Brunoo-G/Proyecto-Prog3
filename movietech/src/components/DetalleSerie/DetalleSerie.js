@@ -68,33 +68,29 @@ class DetalleSerie extends Component{
           favorito: false
         })
       }
+
     render(){
-        console.log(this.state.detalle)
         return(
-        <>
-        <main className="detalle"> 
-           <div>
-                <img src={`https://image.tmdb.org/t/p/w342/${this.state.detalle.poster_path}`} alt=""></img>
-            </div>
-            <div>
-                <h1> Titulo: {this.state.detalle.original_name}</h1>                    
-                <ul>
-                    <li> Fecha de Estreno {this.state.detalle.first_air_date}</li>
-                </ul>
-                <p> Rating {this.state.detalle.vote_average}</p>
-                <p> {this.state.detalle.overview}</p>
-                <p> Genero: Aventura</p>
-                <div className='botones'>
+        <div className="card_detalle">
+          <main className="detalle"> 
+              <div>
+                  <img src={`https://image.tmdb.org/t/p/w342/${this.state.detalle.poster_path}`} alt=""></img>
+              </div>
+              <div className="datos_detalle">
+                  <h1>{this.state.detalle.original_name}</h1>                    
+                  <p> <b>Fecha de Estreno:</b> {this.state.detalle.first_air_date}</p>
+                  <p> <b>Rating:</b> {this.state.detalle.vote_average}</p>
+                  <p> <b>Sinópsis:</b> {this.state.detalle.overview}</p>
+                  <p> <b>Genero:</b> Aventura</p>
                   {
                   this.state.favorito?
-                   <button onClick={()=> this.sacarFavoritos(this.state.detalle.id) }> Eliminar de favoritos</button>
-                   :
-                   <button onClick={() => this.agregarFavoritos(this.state.detalle.id)} > Agregar a Favoritos</button>
-                }
-                </div>
-            </div>
-        </main>
-        </>
+                  <button onClick={()=> this.sacarFavoritos(this.state.detalle.id) }> Eliminar de favoritos</button>
+                  :
+                  <button onClick={() => this.agregarFavoritos(this.state.detalle.id)} > Agregar a Favoritos</button>
+                  }
+              </div>
+          </main>
+        </div>
         )
     } 
 }

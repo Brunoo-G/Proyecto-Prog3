@@ -68,32 +68,28 @@ class Detalle extends Component{
       }
 
     render(){
-        console.log('Este es el state')
-        console.log(this.state.detalle)
         return(
         <div className="card_detalle">
             {this.state.detalle ?
             <main className="detalle"> 
-                <div>
-                    <img src={`https://image.tmdb.org/t/p/w342/${this.state.detalle.poster_path}`} alt=""></img>
-                </div>
-                <div className="datos_detalle">
-                    <h1>{this.state.detalle.title}</h1>                    
-                    <b>Fecha De Estreno:</b> {this.state.detalle.release_date}
-                    <p> <b>Rating:</b> {this.state.detalle.vote_average}</p>
-                    <p> <b>Descripción:</b> {this.state.detalle.overview}</p>
-                    <p> <b>Duracion:</b> {this.state.detalle.runtime} minutos</p>
-                    <p> <b>Genero:</b> {this.state.detalle.genres[1].name}</p>                    
-                </div>
-
-                {
+              <div>
+                  <img src={`https://image.tmdb.org/t/p/w342/${this.state.detalle.poster_path}`} alt=""></img>
+              </div>
+              <div className="datos_detalle">
+                  <h1>{this.state.detalle.title}</h1>                    
+                  <b>Fecha De Estreno:</b> {this.state.detalle.release_date}
+                  <p> <b>Rating:</b> {this.state.detalle.vote_average}</p>
+                  <p> <b>Sinópsis:</b> {this.state.detalle.overview}</p>
+                  <p> <b>Duracion:</b> {this.state.detalle.runtime} minutos</p>
+                  <p> <b>Genero:</b> {this.state.detalle.genres[0].name}</p>     
+                  {
                   this.state.favorito?
-                   <button onClick={()=> this.sacarFavoritos(this.state.detalle.id) }> Eliminar de favoritos</button>
-                   :
-                   <button onClick={() => this.agregarFavoritos(this.state.detalle.id)} > Agregar a Favoritos</button>
-                }
-                
-            </main>: <></> }
+                  <button onClick={()=> this.sacarFavoritos(this.state.detalle.id) }> Eliminar de favoritos</button>
+                  :
+                  <button onClick={() => this.agregarFavoritos(this.state.detalle.id)} > Agregar a Favoritos</button>
+                  }                   
+              </div>    
+            </main>: <> <h1>Cargando..</h1> </> }
         </div>
         
         )
