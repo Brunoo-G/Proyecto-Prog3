@@ -14,12 +14,16 @@ class Home extends Component{
     }
 
     buscarPeliculas(titulo){
+        if(titulo !== ''){
         fetch(`https://api.themoviedb.org/3/search/multi?api_key=9ea8026abecb25639235199cb1388857&query=${titulo}`)
         .then(resp => resp.json())
         .then(data => this.setState({
             data: data.results
         }))
         .catch(err => console.log(err))
+        } else {
+            this.setState({data: []})
+        } 
     }
 
     render(){
