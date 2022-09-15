@@ -6,11 +6,22 @@ class Detalle extends Component{
         super(props);
         this.state = {
             detalle: false,
+            favoritos: false
 
             
         }
     } 
     componentDidMount(){
+        let Storage = localStorage.getItem('peliculasFavoritas')
+    let storageParseado = JSON.parse(Storage)
+    if(storageParseado !== null){
+      let esFavorita = storageParseado.includes(this.props.id) 
+      if(esFavorita) {
+        this.setState({
+          favorito:true
+        })
+      }
+    }
         fetch(`https://api.themoviedb.org/3/movie/${this.props.match.params.id}?api_key=7a176cc95147be6e695be2faf0e8ff9c`)
         .then(resp => resp.json())
         .then(data => 
@@ -22,6 +33,39 @@ class Detalle extends Component{
         .catch(error => console.log(error))
     
     }
+
+    agregarFavoritos(id){
+        let Storage = localStorage.getItem('peliculasFavoritas')
+    
+        if(Storage === null){
+          let array = [id]
+          let arrayAString = JSON.stringify(array)
+          localStorage.setItem('peliculasFavoritas', arrayAString)
+        } else {
+          let arrayParseado = JSON.parse(Storage)
+          arrayParseado.push(id)
+          let arrayAString = JSON.stringify(arrayParseado)
+          localStorage.setItem('peliculasFavoritas', arrayAString)
+        }
+    
+        this.setState({
+          favorito:true
+        })
+      }
+    
+      sacarFavoritos(id){
+        let Storage = localStorage.getItem('peliculasFavoritas')
+        let storageParseado = JSON.parse(Storage) 
+        let filtroStorage = storageParseado.filter(elemento => elemento !== id)
+    
+        let storageAString = JSON.stringify(filtroStorage)
+    
+        localStorage.setItem('peliculasFavoritas', storageAString)
+    
+        this.setState({
+          favorito: false
+        })
+      }
 
     render(){
         console.log('Este es el state')
@@ -42,6 +86,12 @@ class Detalle extends Component{
                 <p> {this.state.detalle.overview}</p>
                 <p> Duracion  {this.state.detalle.runtime} minutos</p>
                 <p> Genero {this.state.detalle.genres[1].name}</p>
+                {
+                  this.state.favorito?
+                   <button onClick={()=> this.sacarFavoritos(this.state.detalle.id) }> Eliminar de favoritos</button>
+                   :
+                   <button onClick={() => this.agregarFavoritos(this.state.detalle.id)} > Agregar a Favoritos</button>
+                }
                 
             </div>
         </main>: <></> }

@@ -7,12 +7,22 @@ class DetalleSerie extends Component{
         super(props);
         this.state = {
             detalle: {},
-            // favoritos: false
+            favorito: false,
+            value:""
             
         }
     } 
     componentDidMount(){
-        console.log("hola");
+        let Storage = localStorage.getItem('seriesFavoritas')
+        let storageParseado = JSON.parse(Storage)
+        if(storageParseado !== null){
+        let esFavorita = storageParseado.includes(this.props.id) 
+        if(esFavorita) {
+          this.setState({
+            favorito:true
+        })
+        }
+    }
         fetch(`https://api.themoviedb.org/3/tv/${this.props.match.params.id}?api_key=7a176cc95147be6e695be2faf0e8ff9c`)
         .then(resp => resp.json())
         .then(data => 
@@ -21,53 +31,43 @@ class DetalleSerie extends Component{
             detalle: data,
             
         })  )
-    //     .catch(error => console.log(error))
-    //     let Storage = localStorage.getItem('DetalleSerie')
-    //     let storageParseado = JSON.parse(Storage)
-    //     if(storageParseado !== null){
-    //     let esFavorita = storageParseado.includes(this.props.id) 
-    //     if(esFavorita) {
-    //       this.setState({
-    //         favorito:true
-    //     })
-    //     }
-    // }
+        .catch(error => console.log(error))
     
     }
 
 
-    // agregarFavoritos(id){
-    //     let Storage = localStorage.getItem('DetalleSerie')
+    agregarFavoritos(id){
+        let Storage = localStorage.getItem('seriesFavoritas')
     
-    //     if(Storage === null){
-    //       let array = [id]
-    //       let arrayAString = JSON.stringify(array)
-    //       localStorage.setItem('DetalleSerie', arrayAString)
-    //     } else {
-    //       let arrayParseado = JSON.parse(Storage)
-    //       arrayParseado.push(id)
-    //       let arrayAString = JSON.stringify(arrayParseado)
-    //       localStorage.setItem('DetalleSerie', arrayAString)
-    //     }
+        if(Storage === null){
+          let array = [id]
+          let arrayAString = JSON.stringify(array)
+          localStorage.setItem('seriesFavoritas', arrayAString)
+        } else {
+          let arrayParseado = JSON.parse(Storage)
+          arrayParseado.push(id)
+          let arrayAString = JSON.stringify(arrayParseado)
+          localStorage.setItem('seriesFavoritas', arrayAString)
+        }
     
-    //     this.setState({
-    //       favorito:true
-    //     })
-    //   }
+        this.setState({
+          favorito:true
+        })
+      }
     
-    //   sacarFavoritos(id){
-    //     let Storage = localStorage.getItem('DetalleSerie')
-    //     let storageParseado = JSON.parse(Storage) 
-    //     let filtroStorage = storageParseado.filter(elemento => elemento !== id)
+      sacarFavoritos(id){
+        let Storage = localStorage.getItem('seriesFavoritas')
+        let storageParseado = JSON.parse(Storage) 
+        let filtroStorage = storageParseado.filter(elemento => elemento !== id)
     
-    //     let storageAString = JSON.stringify(filtroStorage)
+        let storageAString = JSON.stringify(filtroStorage)
     
-    //     localStorage.setItem('DetalleSerie', storageAString)
+        localStorage.setItem('seriesFavoritas', storageAString)
     
-    //     this.setState({
-    //       favorito: false
-    //     })
-    //   }
+        this.setState({
+          favorito: false
+        })
+      }
     render(){
         console.log(this.state.detalle)
         return(
@@ -84,14 +84,14 @@ class DetalleSerie extends Component{
                 <p> Rating {this.state.detalle.vote_average}</p>
                 <p> {this.state.detalle.overview}</p>
                 <p> Genero: Aventura</p>
-                {/* <div className='botones'>
+                <div className='botones'>
                   {
                   this.state.favorito?
-                   <button onClick={()=> this.sacarFavoritos(this.props.id) }> Eliminar de favoritos</button>
+                   <button onClick={()=> this.sacarFavoritos(this.state.detalle.id) }> Eliminar de favoritos</button>
                    :
-                   <button onClick={() => this.agregarFavoritos(this.props.id)} > Agregar a Favoritos</button>
+                   <button onClick={() => this.agregarFavoritos(this.state.detalle.id)} > Agregar a Favoritos</button>
                 }
-                </div> */}
+                </div>
             </div>
         </main>
         </>
