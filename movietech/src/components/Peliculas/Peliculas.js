@@ -28,7 +28,6 @@ class Peliculas extends Component {
         <div className='peliculas'>
 
             <h1>PELÍCULAS POPULARES</h1> 
-            <Link to = "/peliculas" ><h3>Ver más</h3>  </Link>
 
             <section className="card-container">
                 {
@@ -44,7 +43,8 @@ class Peliculas extends Component {
                         />):
                     <h1>Cargando..</h1>
                 }
-            </section>
+            </section> 
+            <Link to = "/peliculas" ><h3>Ver más</h3>  </Link>
         </div>
     </>
     )

@@ -24,8 +24,9 @@ class TodasPelis extends Component {
   render() {
     return (
         <>
-            <h2>Todas las Peliculas</h2>
-
+            <div className='peliculas'>
+                <h1>TODAS LAS PELÍCULAS</h1>
+            </div>
             <section className="card-container">
                 {
                     this.state.data.length > 0 ?

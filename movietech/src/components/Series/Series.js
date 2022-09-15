@@ -28,7 +28,6 @@ class Series extends Component {
     <>
         <div className='series'>
             <h1>SERIES POPULARES</h1>  
-            <Link to = "/series" > <h3>Ver más</h3> </Link>
             
             <section className="card-container">
                 {
@@ -49,6 +48,7 @@ class Series extends Component {
                     <h1>Cargando..</h1>
                 }
             </section>
+            <Link to = "/series" > <h3>Ver más</h3> </Link>
         </div>
     </>
     )
