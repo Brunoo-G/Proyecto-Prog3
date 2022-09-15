@@ -1,18 +1,25 @@
+.card_detalle{
+    display: flex;
+    justify-content: center;
+}
+
 .detalle{
-    margin:0 1rem 2rem;
+    margin: 3rem 1rem 2rem;
     padding:1rem;
     border-radius: 10px;
     box-shadow: 3px 3px 50px 5px rgba(83, 83, 83, 0.873);
-    max-width:20rem;
     display:flex;
-    flex-direction: column;
-    align-items: center;
-    width: 80%;
     background-color: rgba(0, 0, 0, 0.537);
+    max-width: 80%;
 }
 
 .imagen{
     max-width: 15rem;
     justify-content: center;
     border-radius: 20%;
+}
+
+.datos_detalle{
+    margin-left: 2%;
+    font-size: 20px;
 }

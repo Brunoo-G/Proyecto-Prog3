@@ -27,26 +27,22 @@ class Detalle extends Component{
         console.log('Este es el state')
         console.log(this.state.detalle)
         return(
-        <>
-        {this.state.detalle ?
-        <main className="detalle"> 
-           <div>
-                <img src={`https://image.tmdb.org/t/p/w342/${this.state.detalle.poster_path}`} alt=""></img>
-            </div>
-            <div>
-                <h1>{this.state.detalle.title}</h1>                    
-                <ul>
-                    <li> Fecha De Estreno {this.state.detalle.release_date}</li>
-                </ul>
-                <p> Rating {this.state.detalle.vote_average}</p>
-                <p> {this.state.detalle.overview}</p>
-                <p> Duracion  {this.state.detalle.runtime} minutos</p>
-                <p> Genero {this.state.detalle.genres[1].name}</p>
-                
-            </div>
-        </main>: <></> }
-        
-        </>
+        <div className="card_detalle">
+            {this.state.detalle ?
+            <main className="detalle"> 
+                <div>
+                    <img src={`https://image.tmdb.org/t/p/w342/${this.state.detalle.poster_path}`} alt=""></img>
+                </div>
+                <div className="datos_detalle">
+                    <h1>{this.state.detalle.title}</h1>                    
+                    <b>Fecha De Estreno:</b> {this.state.detalle.release_date}
+                    <p> <b>Rating:</b> {this.state.detalle.vote_average}</p>
+                    <p> <b>Descripción:</b> {this.state.detalle.overview}</p>
+                    <p> <b>Duracion:</b> {this.state.detalle.runtime} minutos</p>
+                    <p> <b>Genero:</b> {this.state.detalle.genres[1].name}</p>                    
+                </div>
+            </main>: <></> }
+        </div>
         
         )
     } 

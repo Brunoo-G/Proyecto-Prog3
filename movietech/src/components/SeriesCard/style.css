@@ -11,6 +11,8 @@
 }
 .series-card img{
     max-width: 15rem;
+    border-radius: 3%;
+    margin-top: 5.5%;
 }
 
 .series-card button{
