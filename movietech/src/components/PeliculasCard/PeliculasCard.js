@@ -24,6 +24,7 @@ class PeliculasCard extends Component {
       })
     }
  }
+
   componentDidMount(){
     let Storage = localStorage.getItem('peliculasFavoritas')
     let storageParseado = JSON.parse(Storage)
@@ -81,7 +82,13 @@ class PeliculasCard extends Component {
             <p className={this.state.verMas}>{this.props.descripcion}</p>
 
             <div className='botones'>
-              <button onClick={() => this.verMas()}>Ver más/Ver menos</button>
+
+              {
+               this.state.verMas === 'hide' ?
+               <button onClick={() => this.verMas()}>Ver más</button> :
+               <button onClick={() => this.verMas()}>Ver menos</button>
+              }
+              
               {
                   this.state.favorito?
                    <button onClick={()=> this.sacarFavoritos(this.props.id) }> Eliminar de favoritos</button>

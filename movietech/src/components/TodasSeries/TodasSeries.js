@@ -1,17 +1,17 @@
 import React,{Component} from 'react'
 import SeriesCard from '../SeriesCard/SeriesCard';
-
+import './style.css'
 
 class TodasSeries extends Component {
     constructor(props){
         super(props)
         this.state={
-            data: []
+            data: [],
+            pagina: 1
             
         }
     }
    
-
     componentDidMount(){
         fetch('https://api.themoviedb.org/3/tv/popular?api_key=7a176cc95147be6e695be2faf0e8ff9c')
         .then(resp => resp.json())
@@ -21,6 +21,15 @@ class TodasSeries extends Component {
         .catch(err => console.log(err)) 
     }
 
+    siguientePagina(){
+        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=9ea8026abecb25639235199cb1388857&language=en-US&page=${this.state.pagina}`)
+        .then(res => res.json())
+        .then(data => this.setState({
+            data: this.state.data.concat(data.results),
+            pagina: this.state.pagina + 1
+        }))
+        .catch(err => console.log(err))
+    }
 
   render() {
     return (
@@ -43,6 +52,9 @@ class TodasSeries extends Component {
                     <h1>Cargando..</h1>
                 }
             </section>
+            <div className='boton_card'>
+                <button className='boton' onClick={()=> this.siguientePagina()}> Cargar Más </button>
+            </div>
         </>
     )
   }
