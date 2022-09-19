@@ -10,9 +10,9 @@ class SeriesFavoritas extends Component{
         }
     }
     componentDidMount(){
-        let Storage = localStorage.getItem('seriesFavoritas')
-        if(Storage !== null){
-            let storageParseado = JSON.parse(Storage)
+        let storage = localStorage.getItem('seriesFavoritas')
+        if(storage !== null){
+            let storageParseado = JSON.parse(storage)
             
             Promise.all(
                 storageParseado.map(element =>{

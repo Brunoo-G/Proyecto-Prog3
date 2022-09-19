@@ -10,9 +10,9 @@ class PeliculasFavoritas extends Component{
         }
     }
     componentDidMount(){
-        let Storage = localStorage.getItem('peliculasFavoritas')
-        if(Storage !== null){
-            let storageParseado = JSON.parse(Storage)
+        let storage = localStorage.getItem('peliculasFavoritas')
+        if(storage !== null){
+            let storageParseado = JSON.parse(storage)
             
             Promise.all(
                 storageParseado.map(element =>{

@@ -26,8 +26,8 @@ class PeliculasCard extends Component {
  }
 
   componentDidMount(){
-    let Storage = localStorage.getItem('peliculasFavoritas')
-    let storageParseado = JSON.parse(Storage)
+    let storage = localStorage.getItem('peliculasFavoritas')
+    let storageParseado = JSON.parse(storage)
     if(storageParseado !== null){
       let esFavorita = storageParseado.includes(this.props.id) 
       if(esFavorita) {
@@ -39,14 +39,14 @@ class PeliculasCard extends Component {
   }
 
   agregarFavoritos(id){
-    let Storage = localStorage.getItem('peliculasFavoritas')
+    let storage = localStorage.getItem('peliculasFavoritas')
 
-    if(Storage === null){
+    if(storage === null){
       let array = [id]
       let arrayAString = JSON.stringify(array)
       localStorage.setItem('peliculasFavoritas', arrayAString)
     } else {
-      let arrayParseado = JSON.parse(Storage)
+      let arrayParseado = JSON.parse(storage)
       arrayParseado.push(id)
       let arrayAString = JSON.stringify(arrayParseado)
       localStorage.setItem('peliculasFavoritas', arrayAString)
@@ -58,8 +58,8 @@ class PeliculasCard extends Component {
   }
 
   sacarFavoritos(id){
-    let Storage = localStorage.getItem('peliculasFavoritas')
-    let storageParseado = JSON.parse(Storage) 
+    let storage = localStorage.getItem('peliculasFavoritas')
+    let storageParseado = JSON.parse(storage) 
     let filtroStorage = storageParseado.filter(elemento => elemento !== id)
 
     let storageAString = JSON.stringify(filtroStorage)

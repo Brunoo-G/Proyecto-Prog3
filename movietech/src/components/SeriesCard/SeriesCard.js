@@ -26,8 +26,8 @@ class SeriesCard extends Component {
     }
  }
   componentDidMount(){
-    let Storage = localStorage.getItem('seriesFavoritas')
-    let storageParseado = JSON.parse(Storage)
+    let storage = localStorage.getItem('seriesFavoritas')
+    let storageParseado = JSON.parse(storage)
     if(storageParseado !== null){
       let esFavorita = storageParseado.includes(this.props.id) 
       if(esFavorita) {
@@ -39,14 +39,14 @@ class SeriesCard extends Component {
   }
 
   agregarFavoritos(id){
-    let Storage = localStorage.getItem('seriesFavoritas')
+    let storage = localStorage.getItem('seriesFavoritas')
 
-    if(Storage === null){
+    if(storage === null){
       let array = [id]
       let arrayAString = JSON.stringify(array)
       localStorage.setItem('seriesFavoritas', arrayAString)
     } else {
-      let arrayParseado = JSON.parse(Storage)
+      let arrayParseado = JSON.parse(storage)
       arrayParseado.push(id)
       let arrayAString = JSON.stringify(arrayParseado)
       localStorage.setItem('seriesFavoritas', arrayAString)
@@ -58,8 +58,8 @@ class SeriesCard extends Component {
   }
 
   sacarFavoritos(id){
-    let Storage = localStorage.getItem('seriesFavoritas')
-    let storageParseado = JSON.parse(Storage) 
+    let storage = localStorage.getItem('seriesFavoritas')
+    let storageParseado = JSON.parse(storage) 
     let filtroStorage = storageParseado.filter(elemento => elemento !== id)
 
     let storageAString = JSON.stringify(filtroStorage)
