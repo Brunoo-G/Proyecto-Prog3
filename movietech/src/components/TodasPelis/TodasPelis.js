@@ -22,7 +22,7 @@ class TodasPelis extends Component {
         .catch(err => console.log(err)) 
     }
 
-    siguientePagina(){
+    mostrarMas(){
         fetch(`https://api.themoviedb.org/3/movie/popular?api_key=9ea8026abecb25639235199cb1388857&language=en-US&page=${this.state.pagina}`)
         .then(res => res.json())
         .then(data => this.setState({
@@ -55,7 +55,7 @@ class TodasPelis extends Component {
                 }
             </section>
             <div className='boton_card'>
-                <button className='boton' onClick={()=> this.siguientePagina()}> Cargar Más </button>
+                <button className='boton' onClick={()=> this.mostrarMas()}> Cargar Más </button>
             </div>
         </>
     )

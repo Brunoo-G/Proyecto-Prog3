@@ -39,7 +39,7 @@ class Home extends Component{
             </div>
 
             {
-                this.state.data.length > 0 ? <Resultados data ={this.state.data}/> :
+                this.state.data.length > 0 ? <Resultados data={this.state.data}/> :
                 <>
                 <Peliculas/> 
                 <Series/>
